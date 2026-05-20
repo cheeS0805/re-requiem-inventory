@@ -39,6 +39,7 @@ class WeaponItem extends Item {
     this.fireRate     = data.fireRate      ?? 0;
     this.ammoCapacity = data.ammoCapacity  ?? 0;
     this.ammoType     = data.ammoType      ?? null;
+    this.upgradeLevel = 0;
   }
 
   use() {
@@ -48,6 +49,7 @@ class WeaponItem extends Item {
   applyUpgrade(upgradeOption) {
     if (!this.upgradeable) throw new Error(`"${this.name}" не підтримує апгрейди.`);
     this[upgradeOption.statKey] = (this[upgradeOption.statKey] ?? 0) + upgradeOption.statChange;
+    this.upgradeLevel++;
     return `"${this.name}": ${upgradeOption.description}. ${upgradeOption.statKey} +${upgradeOption.statChange}`;
   }
 }
@@ -239,6 +241,30 @@ class Inventory {
       qty        -= item.stackable ? stackQty : 1;
     }
     return true;
+  }
+
+  placeAt(item, qty, stackId, row, col) {
+    if (row < 0 || col < 0 || row + item.height > this.rows || col + item.width > this.cols) return false;
+    if (!this._canFit(row, col, item.width, item.height)) return false;
+    for (let r = row; r < row + item.height; r++)
+      for (let c = col; c < col + item.width; c++)
+        this.slots[r][c].place(item, qty, stackId, r === row && c === col);
+    return true;
+  }
+
+  moveStack(stackId, toRow, toCol) {
+    const root = this.allSlots().find(s => s.stackId === stackId && s.isRoot);
+    if (!root) return false;
+    if (root.row === toRow && root.col === toCol) return true;
+
+    const { item, quantity: qty, row: fromRow, col: fromCol } = root;
+
+    this.allSlots().filter(s => s.stackId === stackId).forEach(s => s.clear());
+
+    if (this.placeAt(item, qty, stackId, toRow, toCol)) return true;
+
+    this.placeAt(item, qty, stackId, fromRow, fromCol);
+    return false;
   }
 
   removeStack(stackId) {

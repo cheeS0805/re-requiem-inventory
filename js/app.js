@@ -4,46 +4,131 @@ const RECIPES  = CRAFTING_RECIPES.map(r => new Recipe(r));
 const UPGRADES = UPGRADE_OPTIONS.map(u => new UpgradeOption(u));
 
 const ITEM_IMAGES = {
-  alligator_snapper: 'assets/items/alligator_snapper.png',
-  ss_m232:           'assets/items/ss_m232.png',
-  b934:              'assets/items/b934_handgun.png',
-  silencer9:         'assets/items/silencer_9.png',
-  requiem_rev:       'assets/items/requiem_revolver.png',
-  msbg500:           'assets/items/msbg_500.png',
-  w870_police:       'assets/items/w870_shotgun.png',
-  classic70:         'assets/items/classic_70.png',
-  marksman1a:        'assets/items/marksman_1a.png',
-  gal_smg:           'assets/items/gal_smg.png',
-  hatchet:           'assets/items/hatchet.png',
-  mortal_edge:       'assets/items/mortal_edge.png',
-  hunting_knife:     'assets/items/hunting_knife.png',
-  handgun_ammo:      'assets/items/handgun_ammo.png',
-  shotgun_shells:    'assets/items/shotgun_shells.png',
-  rifle_ammo:        'assets/items/rifle_ammo.png',
-  mg_ammo:           'assets/items/mg_ammo.png',
-  ammo_1255:         'assets/items/heavy_ammo.png',
-  green_herb:        'assets/items/green_herb.png',
-  mixed_gg:          'assets/items/mixed_herb_gg.png',
-  mixed_ggg:         'assets/items/mixed_herb_ggg.png',
-  hand_grenade:      'assets/items/hand_grenade.png',
-  molotov:           'assets/items/molotov.png',
-  bottle_of_acid:    'assets/items/acid_bottle.png',
-  stabilizer:        'assets/items/stabilizer.png',
-  steroids:          'assets/items/steroid.png',
-  empty_bottle:      'assets/items/empty_bottle.png',
-  empty_injector:    'assets/items/empty_injector.png',
-  infected_blood:    'assets/items/infected_blood.png',
-  scrap:             'assets/items/scrap.png',
-  rare_metal:        'assets/items/rare_metal.png',
-  gunpowder_small:   'assets/items/small_gunpowder.png',
-  gunpowder_large:   'assets/items/large_gunpowder.png',
-  blood_collector:   'assets/items/blood_collector.png',
-  lock_pick:         'assets/items/lockpick.png',
-  body_armor:        'assets/items/body_armor.png',
+  // Weapons
+  alligator_snapper:  'assets/items/Alligator Snapper.png',
+  ss_m232:            'assets/items/S&S M232.png',
+  b934:               'assets/items/B934.png',
+  silencer9:          'assets/items/Silencer 9.png',
+  freyasneedle:       "assets/items/Freya's.png",
+  redemption:         'assets/items/Redemption.png',
+  matilda_imp:        'assets/items/Matilda IMP.png',
+  requiem_rev:        'assets/items/Requiem.png',
+  ghost_grudge:       'assets/items/Ghost Grudge.png',
+  msbg500:            'assets/items/MSBG 500.png',
+  tac990:             'assets/items/990-TAC.png',
+  w870_police:        'assets/items/W870 Police.png',
+  classic70:          'assets/items/Classic 70.png',
+  marksman1a:         'assets/items/Marksman 1A.png',
+  clatter_carbine:    'assets/items/Clatter Carbine.png',
+  stiri_revo3:        'assets/items/Stiri REVO3 A1.png',
+  gal_smg:            'assets/items/Gal.png',
+  hatchet:            'assets/items/Hatchet.png',
+  mortal_edge:        'assets/items/Mortal Edge.png',
+  rip_knife:          'assets/items/R.I.P. Knife.png',
+  hunting_knife:      'assets/items/Hunting Knife.png',
+  makeshift_knife:    'assets/items/Makeshift Knife.png',
+  rpg7:               'assets/items/RPG-7.png',
+  // Ammo
+  handgun_ammo:       'assets/items/Handgun Ammo.png',
+  shotgun_shells:     'assets/items/Shotgun Shells.png',
+  rifle_ammo:         'assets/items/Rifle Ammo.png',
+  mg_ammo:            'assets/items/Machine Gun Ammo.png',
+  ammo_1255:          'assets/items/12.7x55mm Ammo.png',
+  // Consumables
+  med_injector:       'assets/items/Med Injector.png',
+  hemolytic_injector: 'assets/items/Hemolytic Injector.png',
+  transfusion_bag:    'assets/items/Transfusion Bag.png',
+  mixed_gg:           'assets/items/Mixed Herb (G+G).png',
+  mixed_ggg:          'assets/items/Mixed Herb (G+G+G).png',
+  stabilizer:         'assets/items/Stabilizer.png',
+  steroids:           'assets/items/Steroids.png',
+  hand_grenade:       'assets/items/Hand Grenade.png',
+  stacked_grenade:    'assets/items/Stacked Hand Grenade.png',
+  molotov:            'assets/items/Molotov Cocktail.png',
+  bottle_of_acid:     'assets/items/Bottle of Acid.png',
+  corrosive:          'assets/items/Corrosive.png',
+  // Resources
+  green_herb:         'assets/items/Green Herb.png',
+  gunpowder_small:    'assets/items/Gunpowder (Small).png',
+  gunpowder_large:    'assets/items/Gunpowder (Large).png',
+  scrap:              'assets/items/Scrap.png',
+  infected_blood:     'assets/items/Infected Blood.png',
+  rare_metal:         'assets/items/Rare Metal.png',
+  empty_bottle:       'assets/items/Empty Bottle.png',
+  empty_injector:     'assets/items/Empty Injector.png',
+  // Key Items
+  animus_orb:         'assets/items/Animus Orb.png',
+  battery:            'assets/items/Battery.png',
+  blood_collector:    'assets/items/Blood Collector.png',
+  blood_specimen_c:   'assets/items/Blood Specimen (Converged).png',
+  blood_specimen_d:   'assets/items/Blood Specimen (Denatured).png',
+  blood_specimen_poly:'assets/items/Blood Specimen (Polymerized).png',
+  blood_specimen_rev: 'assets/items/Blood Specimen (Reversible).png',
+  lock_pick:          'assets/items/Lock Pick.png',
+  fuse:               'assets/items/Fuse.png',
+  crank_lever:        'assets/items/Crank Lever.png',
+  gas_can:            'assets/items/Gas Can.png',
+  locker_key:         'assets/items/Locker key.png',
+  antique_coin:       'assets/items/Antique Coin.png',
+  antique_coins:      'assets/items/Antique Coins.png',
+  key_items_bag:      'assets/items/Key Items.png',
+  artificial_heart:   'assets/items/Artificial Heart.png',
+  artificial_lungs:   'assets/items/Artificial Lungs.png',
+  broken_signal:      'assets/items/Broken Signal Receiver.png',
+  bsaa_key:           'assets/items/BSAA Container Key.png',
+  cedar_key:          'assets/items/Cedarbrook Apartment Key.png',
+  cherub_key:         'assets/items/Cherub Key.png',
+  distributor:        'assets/items/Distributor.png',
+  double_helix:       'assets/items/Double Helix Model.png',
+  east_wing_key:      'assets/items/East Wing Keycard.png',
+  files:              'assets/items/Files.png',
+  fire_poker:         'assets/items/Fire Poker.png',
+  forklift_key:       'assets/items/Forklift Key.png',
+  hourglass:          'assets/items/Hourglass.png',
+  id_wristband_1:     'assets/items/ID Wristband (Level 1).png',
+  id_wristband_2:     'assets/items/ID Wristband (Level 2).png',
+  id_wristband_3:     'assets/items/ID Wristband (Level 3).png',
+  joint_plug:         'assets/items/Joint Plug.png',
+  leatherbound_notebook: 'assets/items/Leatherbound Notebook.png',
+  lighter:            'assets/items/Lighter.png',
+  magnetic_key:       'assets/items/Magnetic Key.png',
+  maries_doll:        "assets/items/Marie's Doll.png",
+  mechanic_jack:      'assets/items/Mechanic Jack.png',
+  moon_quartz:        'assets/items/Moon Quartz.png',
+  noblesse_orb:       'assets/items/Noblesse Orb.png',
+  old_key:            'assets/items/Old Key.png',
+  organ_transport:    'assets/items/Organ Transport Box.png',
+  override_key_11:    'assets/items/Override Key (Bioweapon Repository 11).png',
+  override_key_dump:  'assets/items/Override Key (Dump Control Room).png',
+  pencil:             'assets/items/Pencil.png',
+  puzzles:            'assets/items/Puzzles.png',
+  red_jewel:          'assets/items/Red Jewel.png',
+  relay:              'assets/items/Relay.png',
+  repair_kit:         'assets/items/Repair Kit.png',
+  rusty_crank:        'assets/items/Rusty Crank.png',
+  screwdriver:        'assets/items/Screwdriver.png',
+  severed_hand:       'assets/items/Severed Hand.png',
+  socket_wrench:      'assets/items/Square Socket Wrench.png',
+  star_quartz:        'assets/items/Star Quartz.png',
+  sun_quartz:         'assets/items/Sun Quartz.png',
+  tactical_tracker:   'assets/items/Tactical Tracker.png',
+  unicorn_box:        'assets/items/Unicorn Trinket Box.png',
+  valve_wheel:        'assets/items/Valve Handwheel.png',
+  wire_cutters:       'assets/items/Wire Cutters.png',
+  wrench:             'assets/items/Wrench.png',
+  hatch_key:          'assets/items/Hatch Key.png',
+  helicopter_key:     'assets/items/Helicopter Key.png',
+  pantry_key:         'assets/items/Pantry Key.png',
+  // Equipment
+  body_armor:         'assets/items/Body Armor.png',
+  hip_pouch:          'assets/items/Hip Pouch.png',
+  case_upgrade:       'assets/items/Case Upgrade (8x13).png',
+  override_manual:    'assets/items/Override Manual.png',
 };
 
 let inventory        = new Inventory(8, 10);
 let selectedStackId  = null;
+let draggedStackId   = null;
 let currentCharacter = 'leon';
 let currency         = { credits: 500, coins: 0 };
 
@@ -160,15 +245,44 @@ function renderStats() {
   }
 }
 
-function isWeaponUpgraded(item) {
-  if (!(item instanceof WeaponItem)) return false;
-  const base = ITEMS_DATA.find(d => d.id === item.id);
-  return base && (item.damage !== base.damage || item.fireRate !== base.fireRate || item.ammoCapacity !== base.ammoCapacity);
+function onDragStart(e, stackId) {
+  draggedStackId = stackId;
+  e.dataTransfer.effectAllowed = 'move';
+  setTimeout(() => e.target?.classList.add('dragging'), 0);
+}
+
+function onDragEnd(e) {
+  e.target.classList.remove('dragging');
+  draggedStackId = null;
+}
+
+function onDragOver(e) {
+  if (!draggedStackId) return;
+  e.preventDefault();
+  e.currentTarget.classList.add('drag-over');
+}
+
+function onDragLeave(e) {
+  e.currentTarget.classList.remove('drag-over');
+}
+
+function onDrop(e, toRow, toCol) {
+  e.preventDefault();
+  e.currentTarget.classList.remove('drag-over');
+  if (!draggedStackId) return;
+  const stackId = draggedStackId;
+  draggedStackId = null;
+  if (!inventory.moveStack(stackId, toRow, toCol))
+    showToast('Не можна перемістити сюди', 'error');
+  refresh();
 }
 
 function renderGrid() {
+  const CELL = 52;
   const grid = document.getElementById('inventoryGrid');
-  grid.style.gridTemplateColumns = `repeat(${inventory.cols}, 1fr)`;
+  grid.style.gridTemplateColumns = `repeat(${inventory.cols}, ${CELL}px)`;
+  grid.style.gridAutoRows = `${CELL}px`;
+
   let html = '';
   for (let r = 0; r < inventory.rows; r++) {
     for (let c = 0; c < inventory.cols; c++) {
@@ -176,7 +290,10 @@ function renderGrid() {
       const style = `grid-column:${c+1};grid-row:${r+1}`;
 
       if (slot.isEmpty()) {
-        html += `<div class="grid-slot" style="${style}"></div>`;
+        html += `<div class="grid-slot" style="${style}"
+                      ondragover="onDragOver(event)"
+                      ondragleave="onDragLeave(event)"
+                      ondrop="onDrop(event,${r},${c})"></div>`;
         continue;
       }
 
@@ -186,27 +303,33 @@ function renderGrid() {
       const selected = slot.stackId === selectedStackId;
       const imgPath  = ITEM_IMAGES[item.id];
 
-      const imgHtml  = imgPath
-        ? `<img class="slot-img" src="${imgPath}" alt="${item.name}" onerror="this.style.display='none'">`
+      const imgHtml = imgPath
+        ? `<img class="slot-img" src="${imgPath}" alt="${item.name}" onerror="this.outerHTML='<span class=\\'slot-icon\\'>${item.icon}</span>'">`
         : `<span class="slot-icon">${item.icon}</span>`;
 
-      const qtyBadge  = slot.quantity > 1 ? `<span class="slot-qty">×${slot.quantity}</span>` : '';
-      const upgraded  = isWeaponUpgraded(item);
-      const lvBadge   = upgraded ? `<span class="slot-lv">Lv1</span>` : '';
+      const qtyBadge = slot.quantity > 1 ? `<span class="slot-qty">×${slot.quantity}</span>` : '';
+      const upgraded = item instanceof WeaponItem && item.upgradeLevel > 0;
+      const lvBadge  = upgraded ? `<span class="slot-lv">Lv${item.upgradeLevel}</span>` : '';
 
       let cls = 'grid-slot occupied root-slot';
-      if (selected)  cls += ' selected';
-      if (upgraded)  cls += ' upgraded';
+      if (selected) cls += ' selected';
+      if (upgraded) cls += ' upgraded';
 
       html += `<div class="${cls}"
                     style="grid-column:${c+1}/span ${item.width};grid-row:${r+1}/span ${item.height}"
+                    draggable="true"
+                    ondragstart="onDragStart(event,'${slot.stackId}')"
+                    ondragend="onDragEnd(event)"
+                    ondragover="onDragOver(event)"
+                    ondragleave="onDragLeave(event)"
+                    ondrop="onDrop(event,${r},${c})"
                     onclick="selectStack('${slot.stackId}')"
                     title="${item.name} ×${slot.quantity}">
                  ${lvBadge}${imgHtml}<span class="slot-name">${item.name}</span>${qtyBadge}
                </div>`;
     }
   }
-  document.getElementById('inventoryGrid').innerHTML = html;
+  grid.innerHTML = html;
 }
 
 function renderBottomBar() {

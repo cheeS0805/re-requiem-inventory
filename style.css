@@ -312,7 +312,7 @@ body {
 
 .grid-wrap {
   flex: 1;
-  overflow-y: auto;
+  overflow: auto;
   padding: 12px 14px;
   scrollbar-width: thin;
   scrollbar-color: var(--border-hi) transparent;
@@ -322,12 +322,13 @@ body {
 
 .inventory-grid {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(10, 52px);
+  grid-auto-rows: 52px;
   gap: 2px;
+  width: fit-content;
 }
 
 .grid-slot {
-  aspect-ratio: 1;
   background: var(--slot);
   border: 1px solid var(--border);
   border-radius: 2px;
@@ -338,6 +339,7 @@ body {
   cursor: default;
   transition: border-color .1s, background .1s;
 }
+.grid-slot.drag-over { border-color: #4a90d9; background: rgba(74,144,217,.18); }
 .grid-slot.occupied { background: var(--slot-occ); }
 .grid-slot.selected { border-color: var(--red) !important; background: rgba(192,57,43,.25); }
 
@@ -350,8 +352,8 @@ body {
   padding: 3px 2px 2px;
   position: relative;
   gap: 2px;
-  aspect-ratio: unset;
 }
+.root-slot.dragging { opacity: .4; cursor: grabbing; }
 .root-slot:hover { border-color: var(--border-hi); }
 .root-slot.upgraded { border-color: var(--green); }
 .root-slot.upgraded:hover { border-color: #2ecc71; }

@@ -333,6 +333,14 @@ const ITEMS_DATA = [
   },
 
   {
+    id:'corrosive', name:'Corrosive', category:'Consumable',
+    w:1, h:2, smola:2, stackable:true, maxStack:5,
+    usable:true, combinable:false, upgradeable:false,
+    icon:'🧪', description:'Корозивна рідина. Знаходиться в лабораторіях.',
+    subtype:'throwable', throwDamage:200
+  },
+
+  {
     id:'animus_orb', name:'Animus Orb', category:'KeyItem',
     w:1, h:1, smola:0, stackable:false, maxStack:1,
     usable:false, combinable:false, upgradeable:false,
@@ -397,6 +405,312 @@ const ITEMS_DATA = [
     w:1, h:1, smola:0, stackable:true, maxStack:30,
     usable:false, combinable:false, upgradeable:false,
     icon:'🪙', description:'Антикварна монета. Використовується у торгових автоматах.'
+  },
+  {
+    id:'antique_coins', name:'Antique Coins', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:true, maxStack:99,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🪙', description:'Пачка антикварних монет. Велика нагорода.'
+  },
+  {
+    id:'key_items_bag', name:'Key Items', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🗂️', description:'Набір ключових предметів квесту.'
+  },
+  {
+    id:'blood_specimen_poly', name:'Blood Specimen (Polymerized)', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🩺', description:'Полімеризований зразок крові.'
+  },
+  {
+    id:'blood_specimen_rev', name:'Blood Specimen (Reversible)', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🩺', description:'Зворотний зразок крові.'
+  },
+  {
+    id:'artificial_heart', name:'Artificial Heart', category:'KeyItem',
+    w:1, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'❤️', description:'Штучне серце. Вилучено з біологічного об\'єкта.'
+  },
+  {
+    id:'artificial_lungs', name:'Artificial Lungs', category:'KeyItem',
+    w:1, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🫁', description:'Штучні легені. Вилучено з біологічного об\'єкта.'
+  },
+  {
+    id:'broken_signal', name:'Broken Signal Receiver', category:'KeyItem',
+    w:1, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'📡', description:'Зламаний приймач сигналу.'
+  },
+  {
+    id:'bsaa_key', name:'BSAA Container Key', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🗝️', description:'Ключ від контейнера BSAA.'
+  },
+  {
+    id:'cedar_key', name:'Cedarbrook Apartment Key', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🗝️', description:'Ключ від квартири в Cedarbrook.'
+  },
+  {
+    id:'cherub_key', name:'Cherub Key', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🗝️', description:'Ключ у формі херувима.'
+  },
+  {
+    id:'distributor', name:'Distributor', category:'KeyItem',
+    w:1, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🔧', description:'Механічний розподільник. Потрібен для ремонту.'
+  },
+  {
+    id:'double_helix', name:'Double Helix Model', category:'KeyItem',
+    w:1, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🧬', description:'Модель подвійної спіралі ДНК.'
+  },
+  {
+    id:'east_wing_key', name:'East Wing Keycard', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'💳', description:'Картка доступу до східного крила.'
+  },
+  {
+    id:'files', name:'Files', category:'KeyItem',
+    w:1, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'📂', description:'Секретні файли дослідження.'
+  },
+  {
+    id:'fire_poker', name:'Fire Poker', category:'KeyItem',
+    w:1, h:3, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🔱', description:'Кочерга. Використовується для відкриття прихованих проходів.'
+  },
+  {
+    id:'forklift_key', name:'Forklift Key', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🗝️', description:'Ключ від навантажувача на доках.'
+  },
+  {
+    id:'hourglass', name:'Hourglass', category:'KeyItem',
+    w:1, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'⏳', description:'Старовинний пісочний годинник. Потрібен для головоломки.'
+  },
+  {
+    id:'id_wristband_1', name:'ID Wristband (Level 1)', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🪪', description:'Браслет доступу рівня 1.'
+  },
+  {
+    id:'id_wristband_2', name:'ID Wristband (Level 2)', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🪪', description:'Браслет доступу рівня 2.'
+  },
+  {
+    id:'id_wristband_3', name:'ID Wristband (Level 3)', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🪪', description:'Браслет доступу рівня 3.'
+  },
+  {
+    id:'joint_plug', name:'Joint Plug', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🔩', description:'З\'єднувальна заглушка для трубопроводу.'
+  },
+  {
+    id:'leatherbound_notebook', name:'Leatherbound Notebook', category:'KeyItem',
+    w:1, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'📓', description:'Шкіряний блокнот з нотатками дослідника.'
+  },
+  {
+    id:'lighter', name:'Lighter', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🔥', description:'Запальничка. Знайдена на барній стійці.'
+  },
+  {
+    id:'magnetic_key', name:'Magnetic Key', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🗝️', description:'Магнітний ключ для спеціальних замків.'
+  },
+  {
+    id:'maries_doll', name:"Marie's Doll", category:'KeyItem',
+    w:1, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🪆', description:'Лялька Марі. Потрібна для відкриття таємної кімнати.'
+  },
+  {
+    id:'mechanic_jack', name:'Mechanic Jack', category:'KeyItem',
+    w:2, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🔧', description:'Домкрат механіка. Використовується в гаражі.'
+  },
+  {
+    id:'moon_quartz', name:'Moon Quartz', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🌙', description:'Місячний кварц. Вставляється в статую.'
+  },
+  {
+    id:'noblesse_orb', name:'Noblesse Orb', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🔮', description:'Куля благородства. Один з трьох орбів.'
+  },
+  {
+    id:'old_key', name:'Old Key', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🗝️', description:'Старий заіржавілий ключ.'
+  },
+  {
+    id:'organ_transport', name:'Organ Transport Box', category:'KeyItem',
+    w:2, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'📦', description:'Контейнер для транспортування органів.'
+  },
+  {
+    id:'override_key_11', name:'Override Key (Bioweapon Repository 11)', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🔑', description:'Ключ перевизначення для сховища біозброї 11.'
+  },
+  {
+    id:'override_key_dump', name:'Override Key (Dump Control Room)', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🔑', description:'Ключ перевизначення для кімнати управління скидом.'
+  },
+  {
+    id:'pencil', name:'Pencil', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'✏️', description:'Олівець. Потрібен для відмикання замка.'
+  },
+  {
+    id:'puzzles', name:'Puzzles', category:'KeyItem',
+    w:2, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🧩', description:'Частини головоломки. Складаються для відкриття сейфа.'
+  },
+  {
+    id:'red_jewel', name:'Red Jewel', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'💎', description:'Червоний коштовний камінь. Вставляється в статую.'
+  },
+  {
+    id:'relay', name:'Relay', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'⚡', description:'Електричне реле. Потрібне для відновлення живлення.'
+  },
+  {
+    id:'repair_kit', name:'Repair Kit', category:'KeyItem',
+    w:1, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🧰', description:'Набір для ремонту. Використовується в майстерні.'
+  },
+  {
+    id:'rusty_crank', name:'Rusty Crank', category:'KeyItem',
+    w:1, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🔧', description:'Іржава рукоятка. Потрібна для підіймання воріт.'
+  },
+  {
+    id:'screwdriver', name:'Screwdriver', category:'KeyItem',
+    w:1, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🪛', description:'Викрутка. Використовується для відкриття панелей.'
+  },
+  {
+    id:'severed_hand', name:'Severed Hand', category:'KeyItem',
+    w:1, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🖐️', description:'Відрубана рука зі сканером відбитків.'
+  },
+  {
+    id:'socket_wrench', name:'Square Socket Wrench', category:'KeyItem',
+    w:1, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🔩', description:'Квадратний торцевий ключ для шахтних клапанів.'
+  },
+  {
+    id:'star_quartz', name:'Star Quartz', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'⭐', description:'Зірковий кварц. Вставляється в статую.'
+  },
+  {
+    id:'sun_quartz', name:'Sun Quartz', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'☀️', description:'Сонячний кварц. Вставляється в статую.'
+  },
+  {
+    id:'tactical_tracker', name:'Tactical Tracker', category:'KeyItem',
+    w:1, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'📍', description:'Тактичний трекер. Використовується для відстеження цілей.'
+  },
+  {
+    id:'unicorn_box', name:'Unicorn Trinket Box', category:'KeyItem',
+    w:1, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🦄', description:'Скринька з єдинорогом. Містить цінний предмет.'
+  },
+  {
+    id:'valve_wheel', name:'Valve Handwheel', category:'KeyItem',
+    w:2, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'⚙️', description:'Маховик клапана. Використовується для перекриття газу.'
+  },
+  {
+    id:'wire_cutters', name:'Wire Cutters', category:'KeyItem',
+    w:1, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'✂️', description:'Кусачки. Використовуються для перерізання ланцюгів.'
+  },
+  {
+    id:'wrench', name:'Wrench', category:'KeyItem',
+    w:1, h:2, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🔧', description:'Гайковий ключ. Використовується для технічного обслуговування.'
+  },
+  {
+    id:'hatch_key', name:'Hatch Key', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🗝️', description:'Ключ від люка.'
+  },
+  {
+    id:'helicopter_key', name:'Helicopter Key', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🗝️', description:'Ключ від вертольота на даху.'
+  },
+  {
+    id:'pantry_key', name:'Pantry Key', category:'KeyItem',
+    w:1, h:1, smola:0, stackable:false, maxStack:1,
+    usable:false, combinable:false, upgradeable:false,
+    icon:'🗝️', description:'Ключ від комори.'
   },
 
   {
