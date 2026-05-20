@@ -278,8 +278,10 @@ function onDrop(e, toRow, toCol) {
 }
 
 function renderGrid() {
-  const CELL = 52;
   const grid = document.getElementById('inventoryGrid');
+  const wrap = document.querySelector('.grid-wrap');
+  const available = wrap.clientWidth - 28;
+  const CELL = Math.floor((available - (inventory.cols - 1) * 2) / inventory.cols);
   grid.style.gridTemplateColumns = `repeat(${inventory.cols}, ${CELL}px)`;
   grid.style.gridAutoRows = `${CELL}px`;
 

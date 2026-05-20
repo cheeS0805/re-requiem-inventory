@@ -322,10 +322,9 @@ body {
 
 .inventory-grid {
   display: grid;
-  grid-template-columns: repeat(10, 52px);
+  grid-template-columns: repeat(10, 1fr);
   grid-auto-rows: 52px;
   gap: 2px;
-  width: fit-content;
 }
 
 .grid-slot {
