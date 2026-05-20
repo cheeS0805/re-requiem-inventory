@@ -126,13 +126,7 @@ const ITEMS_DATA = [
     icon:'🪓', description:'Сокира ближнього бою. Висока міцність.',
     damage:180, fireRate:0, ammoCapacity:0, ammoType:null, durability:2.5
   },
-  {
-    id:'kotetsu', name:'Kotetsu', category:'Weapon',
-    w:1, h:2, smola:0, stackable:false, maxStack:1,
-    usable:true, combinable:false, upgradeable:true,
-    icon:'🗡️', description:'Японський клинок. Найвища міцність серед ножів.',
-    damage:100, fireRate:0, ammoCapacity:0, ammoType:null, durability:5.0
-  },
+
   {
     id:'mortal_edge', name:'Mortal Edge', category:'Weapon',
     w:1, h:2, smola:0, stackable:false, maxStack:1,
@@ -782,5 +776,4 @@ const UPGRADE_OPTIONS = [
   { id:'up_stiri_fr',       weaponId:'stiri_revo3',       level:1, cost:3, statKey:'fireRate',     statChange:0.5, description:'Покращений механізм подачі' },
   { id:'up_stiri_cap',      weaponId:'stiri_revo3',       level:1, cost:2, statKey:'ammoCapacity', statChange:10,  description:'Розширений магазин' },
   { id:'up_hatchet_dmg',    weaponId:'hatchet',           level:1, cost:2, statKey:'damage',       statChange:80,  description:'Загострене лезо' },
-  { id:'up_kotetsu_dmg',    weaponId:'kotetsu',           level:1, cost:3, statKey:'damage',       statChange:60,  description:'Загартоване лезо' },
 ];
